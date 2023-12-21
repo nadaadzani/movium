@@ -21,6 +21,9 @@ router.use((req, res, next) => {
 router.get('/movies', Controller.showMovies)
 router.get('/profile/add', Controller.addProfile)
 router.post('/profile/add', Controller.handleAddProfile)
+router.get('/profile/comments')
+router.post('/profile/comments')
 router.get('/profile/:id', Controller.showProfile)
+router.get('/profile/:id/upvote', Controller.profileUpvote)
 
 module.exports = router

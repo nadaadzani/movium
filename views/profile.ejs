@@ -21,7 +21,7 @@
                 </li>
             <% } %>
               <li class="nav-item">
-                <a class="nav-link" href="/profile"><%= username %></a>
+                <a class="nav-link" href="/profile/<%= profile.id %>"><%= username %></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="<%= username ? '/logout' : '/login' %>"><%= username ? 'Logout' : 'Login' %></a>
@@ -32,8 +32,18 @@
       </nav>
 
       <section style="margin: 2rem 3rem">
-        <h1>Welcome <%= username %></h1>
+        <h1>Welcome <%= profile.name %></h1>
 
+
+        <div style="display: flex; flex-direction: row; width:auto;height: fit-content;border-radius:2rem;background-color: #4A455A; padding: 2rem 2rem">
+            <img style="border-radius: 2rem;" src="<%= profile.avatarUrl %>" alt="profile pic">
+            <div style="display:flex; flex-direction: column;">
+                <p style="color:white; margin-left: 2rem; font-size: 2em; width:auto"><%= profile.description %></p>
+                <p style="color:white; margin-left: 2rem; font-size: 2em;">Upvotes: <%= profile.upvotes %></p>
+
+                <a style="margin-left: 2rem; font-size: 2em;" href="/profile/<%= profile.id %>/upvote"><button class="btn btn-primary" style="background-color: #2C157F; border:none;">Upvote</button></a>
+            </div>
+        </div>
       </section>
 
 
