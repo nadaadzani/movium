@@ -14,7 +14,7 @@ class UserController {
     static async handleRegister(req, res) {
         try {
             const { username, password, role } = req.body
-            
+            console.log(req.body)
             await User.create({username, password, role})
             res.redirect('/login')
         } catch (error) {
@@ -25,6 +25,7 @@ class UserController {
                 res.redirect(`/register?errors=${errors}`)
             } else {
                 res.send(error)
+                console.log(error)
             }
         }
     }

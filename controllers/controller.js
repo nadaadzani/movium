@@ -15,7 +15,7 @@ class Controller {
                     include: Profile
                 })
             }
-            // console.log(user)
+            console.log(user)
         
 
             res.render('home', { username, user })
