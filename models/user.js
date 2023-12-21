@@ -21,7 +21,12 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notNull: { msg: `Username can't be null`},
         notEmpty: { msg: `Username can't be empty`}
-      }},
+      },
+      isUnique(username) {
+        let valid = User.findOne({ where: { username }})
+        if (valid) throw new Error(`You can't register with the same username!`)
+      }
+    },
     password: {type: DataTypes.STRING, allowNull: false,
       validate: {
         notNull: { msg: `Password can't be null`},
