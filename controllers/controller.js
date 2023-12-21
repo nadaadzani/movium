@@ -54,8 +54,23 @@ class Controller {
     static async addMovieToList(req, res) {
         try {
             const { movieId } = req.params
-
+            const { username } = req.session
+            let user = await User.findOne({where: {
+                username
+            }})
+            await Movie.update({
+                UserId: user.id
+            }, {
+                where: {
+                    id: movieId
+                }
+            })
+            
+            // let result = await User.findAll()
+            // console.log(result)
+            res.redirect('/movies')
         } catch (error) {
+            console.log(error)
             res.send(error)
         }
     }
@@ -87,14 +102,19 @@ class Controller {
         try {
             const { id } = req.params
             const { username } = req.session
+            let user = await User.findOne({
+                where: {
+                    username
+                },
+                include: [Movie]
+            })
             let profile = await Profile.findOne({
                 where: {
                     id
                 },
                 include: [Comment]
             })
-            console.log(profile)
-            res.render('profile', { username, profile, dateFormat, numberFormat })
+            res.render('profile', { username, profile, dateFormat, numberFormat, user })
         } catch (error) {
             console.log(error)
             res.send(error)

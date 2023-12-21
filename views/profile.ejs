@@ -44,6 +44,9 @@
                 <p style="color:white; margin-left: 2rem; font-size: 2em; width:auto"><%= profile.description %></p>
 
                 <p style="color:white; margin-left: 2rem; font-size: 2em;">Movies watched:</p>
+                <% user.Movies.forEach(el => { %>
+                  <p style="color:white; margin-left: 2rem; font-size: 1.5em;">- <%= el.movieName %></p>
+                <% }) %>
                 <p style="color:white; margin-left: 2rem; font-size: 2em;">Upvotes: <%= numberFormat(profile.upvotes) %></p>
 
                 <a style="margin-left: 2rem; font-size: 2em;" href="/profile/<%= profile.id %>/upvote"><button class="btn btn-primary" style="background-color: #2C157F; border:none;">Upvote</button></a>

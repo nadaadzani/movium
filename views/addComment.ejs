@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movium</title>
+</head>
+<body>
+    <h1>Add your own comment</h1>
+
+    <form action="/profile/<%= id %>/comment/add" method="post">
+        <label for="">Comment title</label><br>
+        <input type="text" name="title"><br><br>
+
+        <label for="">Your comment</label><br>
+        <input type="text" name="content"><br><br>
+
+        <label for="">Content image</label><br>
+        <input type="text" name="imgUrl"><br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+</html>

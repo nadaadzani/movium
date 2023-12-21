@@ -19,7 +19,7 @@ router.use((req, res, next) => {
 })
 
 router.get('/movies', Controller.showMovies)
-router.get('/movies/add/:movieId')
+router.get('/movies/add/:movieId', Controller.addMovieToList)
 router.get('/profile/add', Controller.addProfile)
 router.post('/profile/add', Controller.handleAddProfile)
 router.get('/profile/:id', Controller.showProfile)
