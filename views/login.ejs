@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movium</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <% if (error) { %>
+     <p style="color:red"><%= error %></p>
+    <% } %>
+    <form action="/login" method="post">
+        <label for="">Username</label><br>
+        <input type="text" name="username"><br><br>
+
+        <label for="">Password</label><br>
+        <input type="password" name="password"><br><br>
+
+        <!-- <label for="">Role</label><br>
+        <select name="role" id="">
+            <option selected hidden disabled>---SELECT---</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select><br><br> -->
+
+        <h3>Haven't created an account? Please <a href="/register">Register</a></h3><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

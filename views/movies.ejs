@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movium</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    
+    <h1>The Movies:</h1>
+
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Movie Image</th>
+                <th>Movie Name</th>
+                <th>Movie Description</th>
+                <th>Movie Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% movies.forEach(el => { %>
+             <tr>
+                <td><img src="<%= el.movieImg %>" alt="Movie pic" style="width:480px;height:240px"></td>
+                <td><%= el.movieName %></td>
+                <td><%= el.movieDescription %></td>
+                <td><%= el.movieRating %></td>
+             </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+</body>
+</html>
