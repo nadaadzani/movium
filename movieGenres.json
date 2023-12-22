@@ -1,0 +1,31 @@
+[{
+    "MovieId": 4,
+    "GenreId": 1
+  }, {
+    "MovieId": 5,
+    "GenreId": 1
+  }, {
+    "MovieId": 5,
+    "GenreId": 6
+  }, {
+    "MovieId": 6,
+    "GenreId": 2
+  }, {
+    "MovieId": 6,
+    "GenreId": 6
+  }, {
+    "MovieId": 2,
+    "GenreId": 6
+  }, {
+    "MovieId": 5,
+    "GenreId": 5
+  }, {
+    "MovieId": 4,
+    "GenreId": 3
+  }, {
+    "MovieId": 1,
+    "GenreId": 5
+  }, {
+    "MovieId": 3,
+    "GenreId": 3
+}]

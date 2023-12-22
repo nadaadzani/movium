@@ -1,7 +1,7 @@
 const { Op } = require("sequelize")
 const { Movie, User, Profile, Genre, MovieGenre, Comment } = require("../models")
 const dateFormat = require("dateformat");
-const numberFormat = require("../../helpers/numberFormat");
+const numberFormat = require("../helpers/numberFormat");
 
 class Controller {
     static async showHome(req, res) {
